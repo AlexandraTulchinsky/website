@@ -300,7 +300,7 @@ export default function Portfolio() {
                 Customer Feedback- Amazon Product Recommendation
               </h3>
               <Link
-                href="https://github.com/AlexandraTulchinsky/CSI2132_Project"
+                href="https://github.com/AlexandraTulchinsky/Amazon-Product-Recommendation-"
                 target="_blank"
               >
                 <Button variant="outline" className="w-full">
