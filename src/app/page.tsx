@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import Header from "./header";
 import { useEffect } from "react";
+import { workExperience, education, skills, projects } from "./data";
 
 export default function Portfolio() {
   const navLinks = [
@@ -32,16 +33,14 @@ export default function Portfolio() {
         id="about"
         className="max-w-[1000px] w-full py-[50px] md:py-[100px] px-4"
       >
-        <div className="w-full flex flex-col md:flex-row justify-start md:justify-between items-center md:items-start gap-4">
-          <div className="order-1 md:order-1 flex justify-center items-center w-full md:w-[35%] aspect-square rounded-3xl overflow-hidden">
+        <div className="w-full flex flex-col md:flex-row justify-start md:justify-between items-center md:items-center gap-4">
+          <div className="order-1 md:order-1 flex justify-center items-center w-full md:w-[35%] aspect-square rounded-full overflow-hidden">
             <motion.div
               className="relative w-full h-full"
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
             >
-            {/* @@ts-expect-error */}
-
               <img
                 src="/profile-pic.png"
                 alt="Alexandra Tulchinsky"
@@ -97,7 +96,9 @@ export default function Portfolio() {
         id="experience"
         className="max-w-[1000px] w-full py-12 py-[50px] h-auto px-4"
       >
-        <h2 className="text-3xl font-bold text-center mb-16">Get to know me</h2>
+        <h2 className="text-3xl font-bold text-center mb-0 md:mb-16">
+          Get to know me
+        </h2>
 
         <div className="flex flex-col md:flex-row justify-start md:justify-between items-center md:items-start w-full h-full">
           <div className="flex justify-center items-center w-full md:w-[50%] h-[300px] md:h-[600px] shrink-0 rounded-lg overflow-hidden">
@@ -110,7 +111,7 @@ export default function Portfolio() {
               {/* @ts-ignore */}
 
               <model-viewer
-                alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
+                alt="phoenix"
                 src="/phoenix_bird.glb"
                 // environmentImage="shared-assets/environments/moon_1k.hdr"
                 // poster="shared-assets/models/NeilArmstrong.webp"
@@ -123,80 +124,38 @@ export default function Portfolio() {
             </div>
           </div>
           <div className="flex flex-col justify-between items-center gap-8 h-full w-full">
-            <Card className="w-full shadow-sm">
+            <Card className="w-full shadow-[0_0px_20px_rgba(0,0,0,0.35)]">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-2">Work Experience</h3>
                 <div className="flex justify-between items-center gap-4">
                   {/* <div className="w-[3px] h-[200px] bg-red-500 shrink-0"></div> */}
 
                   <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold">
-                        LLM, AI & Machine Learning Engineer (financials &
-                        licensing){" "}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">Nokia</p>
-                      <p className="text-sm">SEPTEMBER 2023 - AUGUST 2024</p>
-                      <p className="text-sm mt-2">
-                        Created an enterprise search solution using GenAI. The
-                        solution enabled users to ask interactive questions and
-                        request summaries from any enterprise licensing content
-                        Optimized and streamlined revenue allocation across
-                        diverse business units using Gen AI. Leveraged the
-                        Hugging Face transformers library, NLP auto-tagging
-                        processes, and MS Power Automate to fully automate the
-                        workflow.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">
-                        Data Scientist (optics and photonics)
-                      </h4>
-                      <p className="text-sm text-muted-foreground">Lumentum</p>
-                      <p className="text-sm">Feb 2020 - Dec 2020</p>
-                      <p className="text-sm mt-2">
-                        Created and deployed an artificial neural network on
-                        Azure that predicts light steering in WSS products,
-                        achieving an accuracy of around 85 to 90 percent.
-                        Optimized the number of features, resulting in increased
-                        model scalability and reduced machine processing time by
-                        30%. Helped improve the next version of product releases
-                        by collaborating with key clients (Ciena, HANA and
-                        Fujitsu) to collect their feedback and prioritize new
-                        features & capabilities.
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold">
-                        Data Systems Analyst (internal software usage and
-                        optimization)
-                      </h4>
-                      <p className="text-sm text-muted-foreground">Lumentum</p>
-                      <p className="text-sm">May 2019 - Aug 2019</p>
-                      <p className="text-sm mt-2">
-                        Communicated between the R&D, IT, Data Science and
-                        Analytics teams to understand business requirements and
-                        desired user experience in terms of capabilities and
-                        features. Collaborated with external vendors (AnyDesk
-                        and ConnectWise) on findings and required improvements
-                        in future product releases. Leveraged feature-by-feature
-                        usage data, end-user survey data, and user data tracking
-                        to gain insights into consumer needs and predict future
-                        third-party application use. Developed data-driven
-                        solutions by mining and analyzing consumer usage data.
-                      </p>
-                    </div>
+                    {workExperience.map((experience, index) => (
+                      <div key={index}>
+                        <h4 className="font-semibold">{experience.title}</h4>
+                        <p className="text-sm text-muted-foreground">
+                          {experience.company}
+                        </p>
+                        <p className="text-sm">{experience.date}</p>
+                        <p className="text-sm mt-2">{experience.description}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </CardContent>
             </Card>
-            <Card className="w-full shadow-sm">
+            <Card className="w-full shadow-[0_0px_20px_rgba(0,0,0,0.35)]">
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">Education</h3>
-                <p className="font-semibold">
-                  B.Sc. Bachelors Degree in Computer Science
-                </p>
-                <p className="text-sm text-muted-foreground">4.0/4.0 GPA</p>
+                {education.map((education, index) => (
+                  <div key={index}>
+                    <h3 className="text-xl font-bold mb-2">Education</h3>
+                    <p className="font-semibold">{education.title}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {education.gpa}
+                    </p>
+                  </div>
+                ))}
               </CardContent>
             </Card>
           </div>
@@ -210,66 +169,21 @@ export default function Portfolio() {
       >
         <h2 className="text-3xl font-bold text-center mb-16">Skills</h2>
         <div className="grid gap-8 md:grid-cols-2">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4">
-                Machine Learning and GenAI
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>Finetuning LLMs</span>
+          {skills.map((skill, index) => (
+            <Card className="shadow-[0_0px_20px_rgba(0,0,0,0.35)]" key={index}>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-4">{skill.title}</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {skill.skills.map((s, i) => (
+                    <div className="flex items-center gap-2" key={i}>
+                      <div className="w-2 h-2 rounded-full bg-primary" />
+                      <span>{s}</span>
+                    </div>
+                  ))}
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>RAG</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>OpenAI & HuggingFace</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>DeepSpeed</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>Prompt Engineering</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>Tranformers Architecture</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4">Web Dev</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>React, Next.js</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>JavaScript, HTML, CSS</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>Node.js, Go</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>PostgreSQL</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>Git</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
@@ -285,80 +199,35 @@ export default function Portfolio() {
           <h2 className="text-3xl font-bold">Projects</h2>
         </div>
         <div className="grid gap-8 md:grid-cols-3">
-          <Card className="overflow-hidden shadow-sm">
-            <div className="bg-sky-100 aspect-square">
-            {/* @@ts-expect-error */}
-
-              <img
-                src="/project-1.png"
-                alt="Project 1"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <CardContent className="p-6">
-              <h3 className="font-semibold text-xl mb-2">
-                Customer Feedback- Amazon Product Recommendation
-              </h3>
-              <Link
-                href="https://github.com/AlexandraTulchinsky/Amazon-Product-Recommendation-"
-                target="_blank"
-              >
-                <Button variant="outline" className="w-full">
-                  DEMO
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
-
-          <Card className="overflow-hidden shadow-sm">
-            <div className="relative bg-neutral-100 aspect-square">
-                  {/* @@ts-expect-error */}
-
-              <img
-                src="/project-2.png"
-                alt="Project 2"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <CardContent className="p-6">
-              <h3 className="font-semibold text-xl mb-2">
-                Dental Clinic using Data & Cloud - Clinic Web Application
-              </h3>
-              <Link
-                href="https://github.com/AlexandraTulchinsky/CSI2132_Project"
-                target="_blank"
-              >
-                <Button variant="outline" className="w-full">
-                  DEMO
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
-
-          <Card className="overflow-hidden shadow-sm">
-            <div className="relative bg-emerald-100 aspect-square">
-                    {/* @@ts-expect-error */}
-
-              <img
-                src="/project-3.png"
-                alt="Project 3"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <CardContent className="p-6">
-              <h3 className="font-semibold text-xl mb-2">
-                Better Digital Audience Engagement - YouTube Data Analysis
-              </h3>
-              <Link
-                href="https://github.com/AlexandraTulchinsky/YouTube-Data-Analysis"
-                target="_blank"
-              >
-                <Button variant="outline" className="w-full">
-                  DEMO
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
+          {projects.map((project, index) => (
+            <Card
+              key={index}
+              className="overflow-hidden shadow-[0_0px_20px_rgba(0,0,0,0.35)] flex flex-col"
+            >
+              <div className="aspect-square p-8 md:p-0 shrink-0">
+                <img
+                  src={project.image}
+                  alt="Project 1"
+                  className="w-full h-full object-cover rounded-lg aspect-square"
+                />
+              </div>
+              <CardContent className="p-8 pt-0 md:p-6 flex flex-col justify-between items-center h-full">
+                <h3 className="font-semibold text-md mb-6 text-center shrink-0">
+                  {project.title}
+                </h3>
+                <div className="w-full h-full"></div>
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  className="shrink-0 w-full"
+                >
+                  <Button variant="outline" className="w-full">
+                    DEMO
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
