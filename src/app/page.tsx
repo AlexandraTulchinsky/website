@@ -204,11 +204,11 @@ export default function Portfolio() {
               key={index}
               className="overflow-hidden shadow-[0_0px_20px_rgba(0,0,0,0.35)] flex flex-col"
             >
-              <div className="aspect-square p-8 md:p-0 shrink-0">
+              <div className="aspect-square p-0 shrink-0 flex items-center justify-center">
                 <img
                   src={project.image}
                   alt="Project 1"
-                  className="object-cover rounded-lg aspect-square"
+                  className="object-cover rounded-lg aspect-square w-[80%] h-[80%] md:w-full md:h-full"
                 />
               </div>
               <CardContent className="p-8 pt-0 md:p-6 flex flex-col justify-between items-center h-full">
