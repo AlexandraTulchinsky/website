@@ -208,7 +208,7 @@ export default function Portfolio() {
                 <img
                   src={project.image}
                   alt="Project 1"
-                  className="w-full h-full object-cover rounded-lg aspect-square"
+                  className="object-cover rounded-lg aspect-square"
                 />
               </div>
               <CardContent className="p-8 pt-0 md:p-6 flex flex-col justify-between items-center h-full">
