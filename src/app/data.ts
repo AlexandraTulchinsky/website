@@ -3,21 +3,21 @@ const projects = [
     title: "Customer Feedback - Amazon Product Recommendation",
     description:
       "A project that uses customer feedback to recommend products on Amazon.",
-    link: "",
+    link: "https://github.com/AlexandraTulchinsky/Amazon-Product-Recommendation-",
     image: "/project-1.png",
   },
   {
     title: "Dental Clinic using Data & Cloud - Clinic Web Application",
     description:
       "A project that uses data and cloud to create a dental clinic web application.",
-    link: "",
+    link: "https://github.com/AlexandraTulchinsky/CSI2132_Project",
     image: "/project-2.png",
   },
   {
     title: "Better Digital Audience Engagement - YouTube Data Analysis",
     description:
       "A project that uses data and cloud to create a dental clinic web application.",
-    link: "",
+    link: "https://github.com/AlexandraTulchinsky/YouTube-Data-Analysis",
     image: "/project-3.png",
   },
 ];
