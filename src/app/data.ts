@@ -23,6 +23,14 @@ const projects = [
 ];
 //
 const workExperience = [
+
+  {
+    title: "Software Engineer AI/ML",
+    company: "Ross Video",
+    date: "JANUARY 2025 - PRESENT",
+    description:
+      "Cut video search time from 3+ hours to under 5 seconds by building a multimodal NLQ pipeline using open-source LLMs and vector indexing to extract features from live and archival footage. Boosted search relevance by 60% and accuracy to 80% with a custom algorithm powering Ross Video’s Streamline platform for 100+ users. Reduced support escalations by 35% and doubled response speed via a scalable RAG system, while mentoring co-op students who shipped production-ready AI features.",
+  },
   {
     title: "LLM, AI & Machine Learning Engineer (financials & licensing)",
     company: "Nokia",
@@ -49,7 +57,7 @@ const workExperience = [
 const education = [
   {
     title: "B.Sc. Honors Bachelors Degree in Computer Science",
-    gpa: "4.0/4.0 GPA",
+    gpa: "3.9/4.0 GPA",
   },
 ];
 
