@@ -112,7 +112,7 @@ export default function Portfolio() {
 
               <model-viewer
                 alt="phoenix"
-                src="/phoenix_bird.glb"
+                src="/cube.glb"
                 // environmentImage="shared-assets/environments/moon_1k.hdr"
                 // poster="shared-assets/models/NeilArmstrong.webp"
                 shadowIntensity={1}
